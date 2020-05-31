@@ -179,17 +179,44 @@
 // ----------------------------------------------------------------------------
 
 
-function wordCount (str){
-  return str.split(" ").length;}
+// function wordCount (str){
+//   return str.split(" ").length;
+// }
 
 
-function test(){
-  let result = wordCount("today is friday");
-  console.log(wordCount)}
-//   if (result !== "4"){
+// function test(){
+//   let result = wordCount("there are four in");
+//   console.log(result)
+//   if (result !== 4){
 //     console.log("failed")
 //     return;
 //   }
 //   console.log("Successful")
 // }
+
+// test()
+
+// ---------------------------------------------------------------
+// 7.
+// write a function fullName that takes in a object with first_name and last_name and returns the full name as string
+// fullName({first_name:'karate',last_name:'kid'}) => 'karate kid'
+// ---------------------------------------------------------------------
+
+function fullName(person){
+
+  // return `${first} ${last}`
+  return `${person.first_name} ${person.last_name}`
+}
+
+
+function test(){
+  let result = fullName({first_name:'karate',last_name:'kid'});
+  console.log(result)
+  if (result !== "karate kid"){
+    console.log("failed")
+    return;
+  }
+  console.log("Successful")
+}
+
 test()
