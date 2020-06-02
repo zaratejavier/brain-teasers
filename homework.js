@@ -131,6 +131,29 @@
 // discuss this with your partner first
 // ie removeItemFromArray([1,'2' ,'hello'], 2) => [1, '2']
 //--------------------------------------------------------------
+// function removeItemFromArray(array,index) {
+  
+//   return arr.splice(array,index)
+// }
+// function test() {
+//   let result = removeItemFromArray([1, 2, 3],2);
+//   arr = [1, '2', 'hello']
+//   let theSplice = removeItemFromArray(arr, 2, 1)
+//   console.log('splice =>', theSplice)
+//   console.log('array =>', arr)
+//   if (JSON.stringify(arr) !== JSON.stringify([1, '2'])) {
+//     console.log('nope')
+//     return
+//   }
+//   console.log('pass')
+// }
+// test()
+
+
+
+
+
+
 // function removeItemFromArray(array, start, deleteCount) {
 //   let arrDeletedItems = array.splice(start, deleteCount)
 //   return arrDeletedItems
@@ -159,7 +182,7 @@
 
 // if (num <= 9) {
 //   return numbers[num];
-// }
+// }                             
 // }
 
 // function test(){
@@ -202,21 +225,47 @@
 // fullName({first_name:'karate',last_name:'kid'}) => 'karate kid'
 // ---------------------------------------------------------------------
 
-function fullName(person){
-
-  // return `${first} ${last}`
-  return `${person.first_name} ${person.last_name}`
-}
+// function fullName(person){
+//   return `${person.first_name} ${person.last_name}`
+// }
 
 
-function test(){
-  let result = fullName({first_name:'karate',last_name:'kid'});
-  console.log(result)
-  if (result !== "karate kid"){
-    console.log("failed")
+// function test(){
+//   let result = fullName({first_name:'karate',last_name:'kid'});
+//   console.log(result)
+//   if (result !== "karate kid"){
+//     console.log("failed")
+//     return;
+//   }
+//   console.log("Successful")
+// }
+
+// test()
+
+// ---------------------------------------------------------------------
+// 8.
+// write a function fullNameArray that takes an array of objects from 7 and returns a new array of full_name
+// fullNameArray(
+// [{first_name:'karate',last_name:'kid'},
+// {first_name:'jim',last_name:'bob'}]
+//) => ['karate kid', 'jim bob']
+// -------------------------------------------------------------------------
+
+function fullNameArray(arr) {
+  let newArr = arr.map( a => `${a.firstName} ${a.lastName}`);
+  return newArr;
+};
+function test8() {
+let theName = fullNameArray([
+  {firstName: "Daniel", lastName: "Russo"},
+  {firstName: "Mr.", lastName: "Miagi"}
+]);
+  if (JSON.stringify(theName) === JSON.stringify(["Daniel Russo", "Mr. Miagi"])) {
+    console.log(theName)
+    console.log("Good job!")
     return;
   }
-  console.log("Successful")
-}
-
-test()
+  console.log(theName)
+  console.log("You failed")
+};
+test8();
